@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{{ url_for('predict') }}" method="post">
+    Age: <input type="number" name="Age" required><br><br> 
+    Credit score: <input type="number" name="CreditScore" required><br><br>
+    Employment Status:
+    <select name="EmploymentStatus" required>
+        <option>Unemployed</option>
+        <option>Self-Employed</option>
+        <option>Employed</option>
+    </select><br><br>
+    Education level:
+    <select name="Educationlevel" required>
+        <option>High school</option>
+        <option>Associate</option>
+        <option>Bachelor</option>
+        <option>Master</option>
+        <option>Doctorate</option>
+    </select><br><br>
+    Loan Amount: <input type="number" step="0.01" name="LoanAmount" required><br><br>
+    Loan Duration (months): <input type="number" name="LoanDuration" required><br><br>
+    Credit Card Utilization Rate: <input type="number" step="0.01" name="CreditCardUtilizationRate" required><br><br>
+    Bankruptcy History:
+    <select name="BankruptcyHistory" required>
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+    </select><br><br>
+    Previous Loan Defaults:
+    <select name="PreviousLoanDefaults" required>
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+    </select><br><br>
+    Length of Credit History (years): <input type="number" name="LengthofCreditHistory" required><br><br>
+    Monthly Income: <input type="number" step="0.01" name="MonthlyIncome" required><br><br>
+    Net Worth: <input type="number" step="0.01" name="NetWorth" required><br><br>
+    Interest Rate: <input type="number" step="0.01" name="InterestRate" required><br><br>
+    <button type="submit">Predict</button>
+</form>
+
+
+<h3>{{ prediction_text }}</h3>
+
+    
+</body>
+</html>
